@@ -1,4 +1,5 @@
 import './App.css';
+import './w3.css';
 import { Component } from 'react';
 
 const URL = 'https://workers-project.workers-project.workers.dev/posts';
@@ -18,8 +19,12 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <span>{this.state.data}</span>
+      <div className='App'>
+        <header className='w3-container w3-center'>
+          <h1><b>GENERIC SOCIAL MEDIA SITE</b></h1>
+        </header>
+        <br />
+        <span className='w3-table w3-auto'>{this.state.data}</span>
         <br />
         <Submission />
       </div>
@@ -68,22 +73,22 @@ class Submission extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form className="w3-margin" onSubmit={this.handleSubmit}>
         <label>
           Title:
-          <input name="title" type="text" onChange={this.handleChange} />
+          <input className="w3-input" name="title" type="text" onChange={this.handleChange} />
         </label>
         <br />
         <label>
           Username:
-          <input name="username" type="text" onChange={this.handleChange} />
+          <input className="w3-input" name="username" type="text" onChange={this.handleChange} />
         </label>
         <br />
         <label>
           Content:
-          <input name="content" type="text" onChange={this.handleChange} />
+          <input className="w3-input" name="content" type="text" onChange={this.handleChange} />
         </label>
-        <input type="submit" value="Submit" />
+        <input className="w3-button" type="submit" value="Submit" />
       </form>
     );
   }
